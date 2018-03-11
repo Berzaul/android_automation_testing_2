@@ -38,3 +38,12 @@ Feature: User is able to convert area units
     When I select "Hectare" from left column
     Then I see "Hectare" in From header
     And I get "10000" in To field
+
+  Scenario Outline:
+    Given I click "<target>" from To field
+    Then I get "<result>" in To field
+    Examples:
+      |target       |result     |
+      |Sq Centimetre|10000000000|
+      |Hectare      |100        |
+      |Sq Mile      |0.3861     |
