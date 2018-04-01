@@ -34,6 +34,7 @@ Feature: User is able to convert area units
     Then I see "Hectare" in From header
     And I get "10000" in To field
 
+  @test
   Scenario Outline:
     Given I click "<target>" from To field
     Then I get "<result>" in To field
