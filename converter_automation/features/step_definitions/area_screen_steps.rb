@@ -1,17 +1,9 @@
-Given(/^I land on help popup$/) do
-  find_element(id: 'alertTitle')
-end
-
 When(/^I click on Got it button$/) do
   find_element(id: 'button1').click
 end
 
 Then(/^I land on Area screen$/) do
   find_element(id: 'toolbar').find_element(xpath: "//android.widget.TextView[@text='Area']")
-end
-
-When(/^I click on Swap button$/) do
-  find_element(id: 'fab').click
 end
 
 And(/^I see "([^"]*)" in From header$/) do |value|
@@ -28,10 +20,17 @@ And(/^I see "([^"]*)" in To header$/) do |value|
   end
 end
 
+When(/^I click on Swap button$/) do
+  find_element(id: 'fab').click
+end
+
 And(/^I click on Clear button$/) do
   find_element(id: 'menu_clear').click
 end
 
+Given(/^I land on help popup$/) do
+  find_element(id: 'alertTitle')
+end
 
 When(/^I enter "([^"]*)" to From field$/) do |value|
   find_element(id: 'header_value_from').send_keys(value)
